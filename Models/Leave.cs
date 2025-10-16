@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace hrms_backend.Models
 {
@@ -22,6 +23,7 @@ namespace hrms_backend.Models
         public string Status { get; set; } = "Pending";     // Dynamic: updated by manager or HR
 
         // Navigation Property
+        [JsonIgnore]
         public Employee? Employee { get; set; }             // Link back to Employee
     }
 }

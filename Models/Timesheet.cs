@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace hrms_backend.Models
 {
@@ -12,10 +13,11 @@ namespace hrms_backend.Models
         public int EmployeeId { get; set; }                 // References Employee.EmployeeId
 
         // Timesheet Details
-        public DateTime Date { get; set; }                  // The date of work log
+        public DateOnly Date { get; set; }                  // The date of work log
         public decimal HoursWorked { get; set; }            // Hours worked on that day
 
         // Navigation Property
+        [JsonIgnore]
         public Employee? Employee { get; set; }
     }
 }

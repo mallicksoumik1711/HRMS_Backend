@@ -9,8 +9,8 @@ namespace hrms_backend.Data
         {
         }
 
-        DbSet<Employee> employees { get; set; }
-        DbSet<Leave> leaves { get; set; }
-        DbSet<Timesheet> timesheets { get; set; }
+        public DbSet<Employee> employees { get; set; }
+        public DbSet<Leave> leaves { get; set; }
+        public DbSet<Timesheet> timesheets { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace hrms_backend.Models
 {
@@ -20,11 +21,19 @@ namespace hrms_backend.Models
 
         // Leave Data
         public int TotalLeaves { get; set; } = 18;         // Same for all employees (default yearly quota)
+
+        [JsonIgnore]
         public int LeavesRemaining { get; set; }           // Dynamic: updated when leaves are approved/cancelled
+
+        [JsonIgnore]
         public int LeavesTaken { get; set; }               // Dynamic: total leaves taken (computed)
 
         // Navigation Data
+
+        [JsonIgnore]
         public List<Leave>? Leaves { get; set; }           // All leave records for this employee
+
+        [JsonIgnore]
         public List<Timesheet>? Timesheets { get; set; }   // All timesheet entries for this employee
     }
 }
