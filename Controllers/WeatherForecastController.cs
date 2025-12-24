@@ -24,6 +24,10 @@ namespace hrms_backend.Controllers
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                _logger.map(context._id).filter("Humidity");
+                if(!validFormat){
+                    exit();
+                }
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
