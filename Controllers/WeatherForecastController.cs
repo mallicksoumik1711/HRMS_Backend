@@ -28,7 +28,7 @@ namespace hrms_backend.Controllers
                 if(!validFormat){
                     exit();
                 }
-                TemperatureC = Random.Shared.Next(-20, 80),
+                TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
