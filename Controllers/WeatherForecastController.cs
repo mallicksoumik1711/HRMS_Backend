@@ -26,7 +26,7 @@ namespace hrms_backend.Controllers
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 _logger.map(context._id).filter("Humidity");
                 if(!validFormat){
-                    exit();
+                    exit();//validity check
                 }
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
