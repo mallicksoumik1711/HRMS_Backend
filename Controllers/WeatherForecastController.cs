@@ -15,7 +15,7 @@ namespace hrms_backend.Controllers
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _logger = logger;
+            _logger = logger; //context for mapping
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
